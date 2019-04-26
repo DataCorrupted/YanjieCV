@@ -123,6 +123,18 @@
   \vspace{0.5em} % Some space after the list of bullet points
 }
 
+%----------------------------------------------------------------------------------------
+% LIST FORMATTING
+%----------------------------------------------------------------------------------------
+\newenvironment{rItem}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
+ {\textbf{#1}} \hfill {#2} % Bold company name and date on the right
+ \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the job title and location line
+  \\
+  {#3} \hfill {\textit{#4}} % Italic job title and location
+  }
+  \\
+}
+
 % The below commands define the whitespace after certain things in the document - they can be \smallskip, \medskip or \bigskip
 \def\namesize{\huge} % Size of the name at the top of the document
 \def\addressskip{\smallskip} % The space between the two address (or phone/email) lines
